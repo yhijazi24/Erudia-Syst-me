@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build SDL2 Project",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-o", "SDL2_Project.exe",   // Output file
+                "main.c",                  // Source file
+                "-I", "src/include",       // Path to SDL2 include folder
+                "-L", "src/lib",           // Path to SDL2 library folder
+                "-lSDL2main",              // Link SDL2main library first
+                "-lSDL2",                  // Link SDL2 library
+                "-lSDL2_ttf"               // Link SDL2_ttf library
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Compiling SDL2 project with GCC"
+        }
+    ]
+}
